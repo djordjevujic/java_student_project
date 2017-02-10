@@ -82,7 +82,7 @@ public class DlgUnosPravougaonik extends JDialog {
 						try {
 							visina = Integer.parseInt(txtUnosVisine.getText());
 							if(visina < 0){
-								throw new ZastitaUnosaException();
+								throw new Exception();
 							}
 						} catch (Exception e) {
 							dozvolaCrtanja = false;
@@ -92,7 +92,7 @@ public class DlgUnosPravougaonik extends JDialog {
 						try {
 							duzinaStranice = Integer.parseInt(txtDuzinaStranice.getText());
 							if(duzinaStranice < 0){
-								throw new ZastitaUnosaException();
+								throw new Exception();
 							}
 						} catch (Exception e) {
 							dozvolaCrtanja = false;

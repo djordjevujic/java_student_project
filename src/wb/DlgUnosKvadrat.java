@@ -86,7 +86,7 @@ public class DlgUnosKvadrat extends JDialog {
 						try{
 							duzinaStranice = Integer.parseInt(txtDuzinaStranice.getText());
 							if(duzinaStranice < 0){
-								throw new ZastitaUnosaException();
+								throw new Exception();
 							}
 							setVisible(false);
 							dozvolaCrtanja = true;

@@ -54,7 +54,6 @@ public class Crtez extends JPanel {
 							o1.setBojaUnutrasnjosti(Crtanje.getBojaPovrsine());
 							listaOblika.add(o1);
 						}
-
 					}
 					if (OpcijaOblik.getIzabranaOpcija() == OpcijaOblik.getCrtajPravougaonik()) {
 						DlgUnosPravougaonik dijalogPravougaonik = new DlgUnosPravougaonik();
@@ -84,13 +83,11 @@ public class Crtez extends JPanel {
 						a.setSelektovan(false);
 				});
 				*/
-				
 				//indeksPoslednjeg = -1;
 				// SELEKCIJA
 				if (OpcijaRadnja.getIzabranaOpcija() == OpcijaRadnja.getOpcijaSelekcija()) {
 					indeksPoslednjeg = -1;
 					listaOblika.forEach((a) -> {
-						//listaOblika.get(listaOblika.indexOf(a)).setSelektovan(false);
 						a.setSelektovan(false);
 						if (a.sadrzi(e.getX(), e.getY())) {
 							indeksPoslednjeg = listaOblika.indexOf(a);
@@ -99,15 +96,6 @@ public class Crtez extends JPanel {
 					if(indeksPoslednjeg > -1)
 						listaOblika.get(indeksPoslednjeg).setSelektovan(true);
 				}
-				/*
-				//MODIFIKACIJA
-				if (OpcijaRadnja.getIzabranaOpcija() == OpcijaRadnja.getOpcijaModifikacija()) {
-					if(listaOblika.get(indeksPoslednjeg) instanceof Tacka){
-						DlgModifTacka dijalogModifTacka = new DlgModifTacka(); 
-						dijalogModifTacka.setVisible(true);
-					}
-				}
-				*/
 			}
 		});
 	}
@@ -128,7 +116,6 @@ public class Crtez extends JPanel {
 		g.fillRect(0, 0, getWidth(), getHeight());
 		
 		listaOblika.forEach((a) -> {
-
 			a.popuni(g);
 			a.crtajSe(g);
 		});

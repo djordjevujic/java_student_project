@@ -20,6 +20,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 
 import geometrija.*;
+import java.awt.Toolkit;
 
 public class DlgModifPravougaonik extends JDialog {
 
@@ -54,6 +55,7 @@ public class DlgModifPravougaonik extends JDialog {
 	 * Create the dialog.
 	 */
 	public DlgModifPravougaonik() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgModifPravougaonik.class.getResource("/ikone/Repair-icon 48.png")));
 		setTitle("Modifikacija pravougaonika");
 		setModal(true);
 		setResizable(false);
@@ -231,7 +233,7 @@ public class DlgModifPravougaonik extends JDialog {
 						try {
 							stranica = Integer.parseInt(txtStranica.getText());
 							if (stranica < 0) {
-								throw new ZastitaUnosaException();
+								throw new Exception();
 							}
 						} catch (Exception e) {
 							dozvolaModifikacije = false;
@@ -241,7 +243,7 @@ public class DlgModifPravougaonik extends JDialog {
 						try {
 							novoY = Integer.parseInt(txtNovoY.getText());
 							if (novoY < 0) {
-								throw new ZastitaUnosaException();
+								throw new Exception();
 							}
 						} catch (Exception e) {
 							dozvolaModifikacije = false;
@@ -251,7 +253,7 @@ public class DlgModifPravougaonik extends JDialog {
 						try {
 							novoX = Integer.parseInt(txtNovoX.getText());
 							if (novoX < 0) {
-								throw new ZastitaUnosaException();
+								throw new Exception();
 							}
 						} catch (Exception e) {
 							dozvolaModifikacije = false;

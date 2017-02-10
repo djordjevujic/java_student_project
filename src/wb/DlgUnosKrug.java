@@ -84,7 +84,7 @@ public class DlgUnosKrug extends JDialog {
 						try {
 							poluprecnik = Integer.parseInt(txtPoluprecnik.getText());
 							if (poluprecnik < 0) {
-								throw new ZastitaUnosaException();
+								throw new Exception();
 							}
 							dozvolaCrtanja = true;
 							setVisible(false);

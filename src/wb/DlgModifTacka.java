@@ -19,6 +19,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.JColorChooser;
+import java.awt.Toolkit;
 
 public class DlgModifTacka extends JDialog {
 
@@ -47,6 +48,7 @@ public class DlgModifTacka extends JDialog {
 	 * Create the dialog.
 	 */
 	public DlgModifTacka() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgModifTacka.class.getResource("/ikone/Repair-icon 48.png")));
 		setTitle("Modifikacija ta\u010Dke");
 		setModal(true);
 		setResizable(false);
@@ -143,7 +145,7 @@ public class DlgModifTacka extends JDialog {
 						try {
 							novoY = Integer.parseInt(txtYKoordinata.getText());
 							if (novoY < 0) {
-								throw new ZastitaUnosaException();
+								throw new Exception();
 							}
 						} catch (Exception e) {
 							dozvolaModifikacije = false;
@@ -156,7 +158,7 @@ public class DlgModifTacka extends JDialog {
 						try {
 							novoX = Integer.parseInt(txtXKoordinata.getText());
 							if (novoY < 0) {
-								throw new ZastitaUnosaException();
+								throw new Exception();
 							}
 						} catch (Exception e) {
 							dozvolaModifikacije = false;

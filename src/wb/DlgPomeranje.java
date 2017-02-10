@@ -18,6 +18,7 @@ import javax.swing.ButtonGroup;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import geometrija.*;
+import java.awt.Toolkit;
 
 public class DlgPomeranje extends JDialog {
 
@@ -33,7 +34,7 @@ public class DlgPomeranje extends JDialog {
 	private int izabranaOpcija = opcijaPomeriNa;
 	private int unesenoX;
 	private int unesenoY;
-	private boolean dozvolaPomeranja;
+	private boolean dozvolaPomeranja = false;
 
 	/**
 	 * Launch the application.
@@ -52,6 +53,7 @@ public class DlgPomeranje extends JDialog {
 	 * Create the dialog.
 	 */
 	public DlgPomeranje() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgPomeranje.class.getResource("/ikone/move-24.png")));
 		setResizable(false);
 		setModal(true);
 		setTitle("Pomeranje oblika");
@@ -116,7 +118,7 @@ public class DlgPomeranje extends JDialog {
 				JButton okButton = new JButton("Potvrdi");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						dozvolaPomeranja = true;
+							dozvolaPomeranja = true;
 							try{
 								unesenoY = Integer.parseInt(txtNovoY.getText());
 							}

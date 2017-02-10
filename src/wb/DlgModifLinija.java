@@ -22,6 +22,7 @@ import javax.swing.JColorChooser;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Toolkit;
 
 public class DlgModifLinija extends JDialog {
 
@@ -59,6 +60,7 @@ public class DlgModifLinija extends JDialog {
 	 * Create the dialog.
 	 */
 	public DlgModifLinija() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgModifLinija.class.getResource("/ikone/Repair-icon 48.png")));
 		setTitle("Modifikacija ta\u010Dke");
 		setModal(true);
 		setResizable(false);
@@ -203,7 +205,7 @@ public class DlgModifLinija extends JDialog {
 						try {
 							novoYKraj = Integer.parseInt(txtYKraj.getText());
 							if(novoYKraj < 0){
-								throw new ZastitaUnosaException();
+								throw new Exception();
 							}
 						} catch (Exception e) {
 							dozvolaModifikacije = false;
@@ -216,7 +218,7 @@ public class DlgModifLinija extends JDialog {
 						try {
 							novoXKraj = Integer.parseInt(txtXKraj.getText());
 							if(novoYKraj < 0){
-								throw new ZastitaUnosaException();
+								throw new Exception();
 							}
 						} catch (Exception e) {
 			
@@ -230,7 +232,7 @@ public class DlgModifLinija extends JDialog {
 						try {
 							novoYPoc = Integer.parseInt(txtYPoc.getText());
 							if(novoYPoc < 0){
-								throw new ZastitaUnosaException();
+								throw new Exception();
 							}
 						} catch (Exception e) {
 							dozvolaModifikacije = false;
@@ -243,7 +245,7 @@ public class DlgModifLinija extends JDialog {
 						try {
 							novoXPoc = Integer.parseInt(txtXPoc.getText());
 							if(novoXPoc < 0){
-								throw new ZastitaUnosaException();
+								throw new Exception();
 							}
 						} catch (Exception e) {
 							dozvolaModifikacije = false;

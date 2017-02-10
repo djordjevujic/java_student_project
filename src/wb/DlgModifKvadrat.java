@@ -20,6 +20,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 
 import geometrija.*;
+import java.awt.Toolkit;
 
 public class DlgModifKvadrat extends JDialog {
 
@@ -52,6 +53,7 @@ public class DlgModifKvadrat extends JDialog {
 	 * Create the dialog.
 	 */
 	public DlgModifKvadrat() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgModifKvadrat.class.getResource("/ikone/Repair-icon 48.png")));
 		setTitle("Modifikacija kvadrata");
 		setModal(true);
 		setResizable(false);
@@ -202,7 +204,7 @@ public class DlgModifKvadrat extends JDialog {
 						try{
 							stranica = Integer.parseInt(txtStranica.getText());
 							if(stranica < 0){
-								throw new ZastitaUnosaException();
+								throw new Exception();
 							}
 						}
 						catch(Exception e){
@@ -213,7 +215,7 @@ public class DlgModifKvadrat extends JDialog {
 						try{
 							novoY = Integer.parseInt(txtNovoY.getText());
 							if(novoY < 0){
-								throw new ZastitaUnosaException();
+								throw new Exception();
 							}
 						}
 						catch(Exception e){
@@ -224,7 +226,7 @@ public class DlgModifKvadrat extends JDialog {
 						try{
 							novoX = Integer.parseInt(txtNovoX.getText());
 							if(novoX < 0){
-								throw new ZastitaUnosaException();
+								throw new Exception();
 							}
 						}
 						catch(Exception e){
